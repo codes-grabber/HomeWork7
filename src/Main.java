@@ -15,5 +15,15 @@ public class Main {
 
         float result = (endTime - startTime) * 0.000000001f;
         System.out.println(result);
+
+        StringBuilder sb = new StringBuilder();
+         startTime = System.nanoTime();
+        for (int i = 0; i < 50000; i++) {
+            sb.append("a");
+        }
+        endTime = System.nanoTime();
+
+        result = (endTime - startTime) * 0.000000001f;
+        System.out.println(result);
     }
 }
