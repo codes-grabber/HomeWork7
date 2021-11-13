@@ -1,19 +1,19 @@
 public class Main {
     public static void main(String[] args) {
-        Cat cat = new Cat("Дуся", 60);
-        Plate plate = new Plate(50);
+//       Cat firstCat = new Cat ("Васька", "Белый");
+//       Cat secondCat = new Cat ("Васька", "Белый");
+//
+//        System.out.println(firstCat.equals(secondCat)); // сравниваем два обьекта
 
+        String s1 = "";
 
-        Cat cats[] = {
-                new Cat("Дуся", 10),
-                new Cat("Люся", 30),
-                new Cat("Васька", 50),
-                new Cat("Патриция", 49)
-        };
-
-        for (Cat animal : cats){
-            animal.eat(plate);
-            plate.Info();
+        long startTime = System.nanoTime();
+        for (int i = 0; i < 50000; i++) {
+            s1 += "a";
         }
+        long endTime = System.nanoTime();
+
+        float result = (endTime - startTime) * 0.000000001f;
+        System.out.println(result);
     }
 }

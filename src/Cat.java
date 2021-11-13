@@ -1,21 +1,24 @@
 public class Cat {
     private String name;
-    private int appetite;
-    private boolean satiety;
+    private String color;
 
-    public Cat (String name, int appetite){
+    Cat (String name, String color){
         this.name = name;
-        this.appetite = appetite;
-        this.satiety = false;
+        this.color = color;
     }
 
-    public void eat(Plate plate) {
-        if(plate.decreaseFood(appetite)) {
-            satiety = true;
-            System.out.println(this.name + " " + satiety);
-        } else {
-            plate.addFood(50);
-            satiety = false; System.out.println(this.name + " " + satiety);
+    @Override
+    public boolean equals (Object obj){
+        if (this == obj){
+            return true;
         }
+
+        if (obj instanceof Cat){
+            Cat another = (Cat) obj;
+            if (this.name.equals(another.name) && this.color.equals(another.color)){
+                return true;
+            }
+        }
+        return false;
     }
 }
