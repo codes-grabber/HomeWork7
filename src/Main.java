@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 //        new MyWindow();
@@ -27,9 +29,18 @@ public class Main {
                 "pineapple",
                 "pumpkin",
                 "potato"};
+        for (int i = words.length-1; i >= 0; i--) {
+            System.out.print(words[i] + " ");
+        }
+        System.out.println();
+        WordTest firstWord = new WordTest(words);
+        Scanner scanner = new Scanner(System.in);
+        String s = scanner.nextLine();
 
-        WordTest firstWord = new WordTest("Gay");
+        while(firstWord.thingWord(s)){
+            s = scanner.nextLine();
 
+        }
 
     }
 }
